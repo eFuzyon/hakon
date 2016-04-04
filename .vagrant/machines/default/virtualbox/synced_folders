@@ -1,0 +1,1 @@
+{"virtualbox":{"/home/lsanchesdev":{"guestpath":"/home/lsanchesdev","hostpath":"/home/lsanchesdev/vagrant/hakondev","disabled":false,"__vagrantfile":true},"/vagrant":{"guestpath":"/vagrant","hostpath":"/home/lsanchesdev/vagrant/hakondev","disabled":false,"__vagrantfile":true}}}
