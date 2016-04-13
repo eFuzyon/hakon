@@ -11,6 +11,15 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::group(['as' => 'site::', 'middleware' => 'web'], function(){
+
+	Route::get('/', 'Site\Home@Index');
+	Route::get('/{page}', 'Site\Home@Page');
+
+});
+
+Route::group(['as' => 'hakon::', 'middleware' => 'auth'], function(){
+
+	Route::get('/hakon-admin', ['as' => 'admin', 'Admin\Home@indexAction']);
+
 });
