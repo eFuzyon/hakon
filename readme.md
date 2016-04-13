@@ -1,7 +1,7 @@
 # eFuzyon: Hakon CMS
 
-[![Build Status](https://img.shields.io/badge/License-MIT-blue.svg)]
-[![License](https://img.shields.io/badge/Build-None-red.svg)]
+![Build Status](https://img.shields.io/badge/License-MIT-blue.svg)
+![License](https://img.shields.io/badge/Build-None-red.svg)
 
 ## License
 
