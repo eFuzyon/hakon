@@ -7,9 +7,9 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-class Home extends Controller
+class Page extends Controller
 {
-    public function Index(){
+    public function Selector(){
     	return view('welcome');
     }
 }
