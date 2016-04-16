@@ -17,7 +17,7 @@ Route::group(['as' => 'site::', 'middleware' => 'web'], function () {
         ->name('web');
 
     Route::get('/{page}', 'Site\Page@Selector')
-        ->where('friendly_url', '(.*)');
+        ->where('page', '(.*)');
 
 });
 
@@ -27,7 +27,7 @@ Route::group(['as' => 'hakon::', 'middleware' => 'auth'], function () {
         ->name("admin");
 
     Route::get('/hakon-admin/{page}', 'Admin\Page@Selector')
-        ->where('friendly_url', '(.*)');
+        ->where('page', '(.*)');
 
 });
 
@@ -37,6 +37,6 @@ Route::group(['as' => 'hakon::', 'middleware' => 'auth'], function () {
         ->name('heimdall');
 
     Route::get('/heimdall/{page}', 'Heimdall\Page@Selector')
-        ->where('friendly_url', '(.*)');
+        ->where('page', '(.*)');
 
 });
