@@ -21,7 +21,7 @@ Route::group(['as' => 'site::', 'middleware' => 'web'], function () {
 
 });
 
-Route::group(['as' => 'hakon::', 'middleware' => 'auth'], function () {
+Route::group(['as' => 'hakon::', 'middleware' => 'authHakonAdmin'], function () {
 
     Route::get('/hakon-admin', 'Admin\Home@indexAction')
         ->name("admin");
@@ -31,7 +31,7 @@ Route::group(['as' => 'hakon::', 'middleware' => 'auth'], function () {
 
 });
 
-Route::group(['as' => 'hakon::', 'middleware' => 'auth'], function () {
+Route::group(['as' => 'hakon::', 'middleware' => 'authHeimdall'], function () {
 
     Route::get('/heimdall', 'Heimdall\Home@indexAction')
         ->name('heimdall');
