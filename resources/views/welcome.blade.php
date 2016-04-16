@@ -1,13 +1,17 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Laravel</title>
+        <title>Hakon</title>
 
         <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
 
         <style>
             html, body {
                 height: 100%;
+            }
+
+            a {
+                text-decoration: none;
             }
 
             body {
@@ -30,15 +34,30 @@
                 display: inline-block;
             }
 
-            .title {
+            .title, .title a {
+                color: gray;
                 font-size: 96px;
+            }
+
+            .title a:hover {
+                color: black;
+            }
+
+            .subtitle, .subtitle a {
+                color: gray;
+                font-weight: bold;
+            }
+
+            .subtitle a:hover {
+                color: black;
             }
         </style>
     </head>
     <body>
         <div class="container">
             <div class="content">
-                <div class="title">Laravel 5</div>
+                <div class="title"><a href="https://github.com/efuzyon/hakon">Hakon</a></div>
+                <div class="subtitle">Powered by <a href="https://github.com/efuzyon" target="_blank">eFuzyon Technology</a></div>
             </div>
         </div>
     </body>
