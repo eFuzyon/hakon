@@ -11,15 +11,26 @@
 |
 */
 
-Route::group(['as' => 'site::', 'middleware' => 'web'], function(){
+Route::group(['as' => 'site::', 'middleware' => 'web'], function () {
 
-	Route::get('/', 'Site\Home@Index');
-	Route::get('/{page}', 'Site\Home@Page');
+    Route::get('/', ['as' => 'web', 'uses' => 'Site\Home@Index']);
+    Route::get('/{page}', 'Site\Home@Page')
+    	->where('friendly_url', '(.*)');
 
 });
 
-Route::group(['as' => 'hakon::', 'middleware' => 'auth'], function(){
+Route::group(['as' => 'hakon::', 'middleware' => 'auth'], function () {
 
-	Route::get('/hakon-admin', ['as' => 'admin', 'Admin\Home@indexAction']);
+    Route::get('/hakon-admin', ['as' => 'admin', 'uses' => 'Admin\Home@indexAction']);
+    Route::get('/hakon-admin/{page}', 'Admin\Home@indexAction')
+        ->where('friendly_url', '(.*)');
+
+});
+
+Route::group(['as' => 'hakon::', 'middleware' => 'auth'], function () {
+
+    Route::get('/heimdall', ['as' => 'heimdall', 'uses' => 'Heimdall\Home@indexAction']);
+    Route::get('/heimdall/{page}', 'Heimdall\Home@indexAction')
+        ->where('friendly_url', '(.*)');
 
 });
