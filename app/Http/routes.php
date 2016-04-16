@@ -13,15 +13,19 @@
 
 Route::group(['as' => 'site::', 'middleware' => 'web'], function () {
 
-    Route::get('/', ['as' => 'web', 'uses' => 'Site\Home@Index']);
+    Route::get('/', 'Site\Home@Index')
+        ->name('web');
+
     Route::get('/{page}', 'Site\Page@Selector')
-    	->where('friendly_url', '(.*)');
+        ->where('friendly_url', '(.*)');
 
 });
 
 Route::group(['as' => 'hakon::', 'middleware' => 'auth'], function () {
 
-    Route::get('/hakon-admin', ['as' => 'admin', 'uses' => 'Admin\Home@indexAction']);
+    Route::get('/hakon-admin', 'Admin\Home@indexAction')
+        ->name("admin");
+
     Route::get('/hakon-admin/{page}', 'Admin\Page@Selector')
         ->where('friendly_url', '(.*)');
 
@@ -29,7 +33,9 @@ Route::group(['as' => 'hakon::', 'middleware' => 'auth'], function () {
 
 Route::group(['as' => 'hakon::', 'middleware' => 'auth'], function () {
 
-    Route::get('/heimdall', ['as' => 'heimdall', 'uses' => 'Heimdall\Home@indexAction']);
+    Route::get('/heimdall', 'Heimdall\Home@indexAction')
+        ->name('heimdall');
+
     Route::get('/heimdall/{page}', 'Heimdall\Page@Selector')
         ->where('friendly_url', '(.*)');
 
