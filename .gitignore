@@ -1,2 +1,4 @@
 .composer
 .vagrant
+.env
+/vendor
