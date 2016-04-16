@@ -124,6 +124,11 @@ return [
     'providers' => [
 
         /*
+        * Hakon Service Providers
+        */
+        Plugin\Hakon\Install\Service\InstallServiceProvider::class,
+
+        /*
          * Laravel Framework Service Providers...
          */
         Illuminate\Auth\AuthServiceProvider::class,
