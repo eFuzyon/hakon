@@ -64,8 +64,13 @@ class InstallController extends Controller
 
     public function stepOne(){
 
-        echo "<pre>
-        You need to install it first";
+        echo view("install::step-1");
+
+    }
+
+    public function stepTwo(){
+
+        echo view("install::step-2");
 
     }
 
