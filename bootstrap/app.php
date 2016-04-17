@@ -43,6 +43,29 @@ $app->singleton(
 
 /*
 |--------------------------------------------------------------------------
+| Register plugins
+|--------------------------------------------------------------------------
+*/
+
+# Vars
+$plugins_file = __DIR__."/../plugins/plugins.yml";
+
+# Load custom plugins as service providers
+if (file_exists($plugins_file)) :
+
+	# Vars
+	global $plugins;
+
+	# Load parser
+    $yaml = new \Symfony\Component\Yaml\Parser();
+
+    # Parse plugins
+    $plugins = $yaml->parse(file_get_contents($plugins_file));
+
+endif;
+
+/*
+|--------------------------------------------------------------------------
 | Return The Application
 |--------------------------------------------------------------------------
 |

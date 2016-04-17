@@ -7,7 +7,9 @@ use Illuminate\Support\ServiceProvider;
 class InstallServiceProvider extends ServiceProvider {
 
 	public function boot(){
-		
+
+		$this->loadViewsFrom(__DIR__.'/../View', 'install');
+
 	}
 
 	public function register(){
@@ -16,7 +18,7 @@ class InstallServiceProvider extends ServiceProvider {
 		include __DIR__.'/../routes.php';
 
 		# Code
-        $this->app->make('Plugin\Hakon\Install\Controller\InstallController');
+		$this->app->make('Plugin\Hakon\Install\Controller\InstallController');
 
 	}
 

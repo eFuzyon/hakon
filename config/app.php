@@ -1,6 +1,6 @@
 <?php
 
-return [
+$app = [
 
     /*
     |--------------------------------------------------------------------------
@@ -124,11 +124,6 @@ return [
     'providers' => [
 
         /*
-        * Hakon Service Providers
-        */
-        Plugin\Hakon\Install\Service\InstallServiceProvider::class,
-
-        /*
          * Laravel Framework Service Providers...
          */
         Illuminate\Auth\AuthServiceProvider::class,
@@ -210,3 +205,31 @@ return [
     ],
 
 ];
+
+# Load plugins
+global $plugins;
+
+# Push providers to app
+if (isset($plugins["providers"])) :
+    if (isset($plugins["providers"]["loaded"])) :
+        foreach ($plugins["providers"]["loaded"] as $loaded) :
+            $loaded = html_entity_decode($loaded);
+            array_unshift($app["providers"], $loaded);
+        endforeach;
+    endif;
+endif;
+
+# Push aliases to app
+if (isset($plugins["aliases"])) :
+    if (isset($plugins["aliases"]["loaded"])) :
+        $loader = [];
+        foreach ($plugins["aliases"]["loaded"] as $alias => $loaded) :
+            $loaded = html_entity_decode($loaded);
+            $loader[$alias] = $loaded;
+            $app["aliases"] = array_merge($loader, $app["aliases"]);
+        endforeach;
+    endif;
+endif;
+
+# Output
+return $app;

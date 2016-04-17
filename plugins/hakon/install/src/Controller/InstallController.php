@@ -7,12 +7,6 @@ use App\Http\Controllers\Controller;
 class InstallController extends Controller
 {
 
-    public function __construct(){
-
-        #self::setup();
-
-    }
-
     public function setup()
     {
 
@@ -70,8 +64,13 @@ class InstallController extends Controller
 
     public function stepOne(){
 
-        echo "<pre>
-        You need to install it first";
+        echo view("install::step-1");
+
+    }
+
+    public function stepTwo(){
+
+        echo view("install::step-2");
 
     }
 

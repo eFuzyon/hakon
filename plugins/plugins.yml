@@ -1,0 +1,7 @@
+providers:
+    loaded:
+        - "Plugin\\Hakon\\Install\\Service\\InstallServiceProvider"
+
+aliases:
+    loaded:
+        pluginInstall: "Plugin\\Hakon\\Install\\Service\\InstallServiceProvider"
