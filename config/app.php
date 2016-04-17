@@ -1,6 +1,6 @@
 <?php
 
-return [
+$app = [
 
     /*
     |--------------------------------------------------------------------------
@@ -124,11 +124,6 @@ return [
     'providers' => [
 
         /*
-        * Hakon Service Providers
-        */
-        Plugin\Hakon\Install\Service\InstallServiceProvider::class,
-
-        /*
          * Laravel Framework Service Providers...
          */
         Illuminate\Auth\AuthServiceProvider::class,
@@ -210,3 +205,24 @@ return [
     ],
 
 ];
+
+# Vars
+$plugins_file = __DIR__."/../plugins/plugins.yml";
+
+# Load custom plugins as service providers
+if (file_exists($plugins_file)) :
+
+    $yaml = new \Symfony\Component\Yaml\Parser();
+    $plugins = $yaml->parse(file_get_contents($plugins_file));
+
+    if (isset($plugins["loaded"])) :
+        foreach ($plugins["loaded"] as $loaded) :
+            $loaded = html_entity_decode($loaded);
+            array_unshift($app["providers"], $loaded);
+        endforeach;
+    endif;
+
+endif;
+
+# Output
+return $app;
