@@ -20,7 +20,7 @@ class InstallController extends Controller
         $redirect = true;
 
         # Get installation status
-        #$status = self::status();
+        $status = self::status();
 
         # Check status
         if ($status) :
