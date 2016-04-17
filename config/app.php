@@ -206,22 +206,29 @@ $app = [
 
 ];
 
-# Vars
-$plugins_file = __DIR__."/../plugins/plugins.yml";
+# Load plugins
+global $plugins;
 
-# Load custom plugins as service providers
-if (file_exists($plugins_file)) :
-
-    $yaml = new \Symfony\Component\Yaml\Parser();
-    $plugins = $yaml->parse(file_get_contents($plugins_file));
-
-    if (isset($plugins["loaded"])) :
-        foreach ($plugins["loaded"] as $loaded) :
+# Push providers to app
+if (isset($plugins["providers"])) :
+    if (isset($plugins["providers"]["loaded"])) :
+        foreach ($plugins["providers"]["loaded"] as $loaded) :
             $loaded = html_entity_decode($loaded);
             array_unshift($app["providers"], $loaded);
         endforeach;
     endif;
+endif;
 
+# Push aliases to app
+if (isset($plugins["aliases"])) :
+    if (isset($plugins["aliases"]["loaded"])) :
+        $loader = [];
+        foreach ($plugins["aliases"]["loaded"] as $alias => $loaded) :
+            $loaded = html_entity_decode($loaded);
+            $loader[$alias] = $loaded;
+            $app["aliases"] = array_merge($loader, $app["aliases"]);
+        endforeach;
+    endif;
 endif;
 
 # Output
