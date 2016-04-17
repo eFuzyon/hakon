@@ -1,0 +1,2 @@
+loaded:
+    - "Plugin\\Hakon\\Install\\Service\\InstallServiceProvider"
