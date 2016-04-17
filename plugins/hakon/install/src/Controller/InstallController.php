@@ -7,12 +7,6 @@ use App\Http\Controllers\Controller;
 class InstallController extends Controller
 {
 
-    public function __construct(){
-
-        #self::setup();
-
-    }
-
     public function setup()
     {
 
