@@ -10,43 +10,7 @@ class InstallController extends Controller
     public function setup()
     {
 
-        # Vars
-        $redirect = true;
-
-        # Get installation status
-        $status = self::status();
-
-        # Check status
-        if ($status) :
-
-            if ( $statusObj = @$status->getData()) :
-
-                if ($statusObj->installation_status != "OK") :
-
-                    $redirect = false;
-
-                endif;
-
-            endif;
-
-        endif;
-
-        # Output
-        if (!$redirect) :
-
-            $this->stepOne();
-
-        else:
-
-            #if():
-            #    return redirect("/");
-            #else:
-            #endif;
-
-            #return true;
-            return redirect("/");
-
-        endif;
+        echo view("install::step-1");
 
     }
 
@@ -55,16 +19,10 @@ class InstallController extends Controller
 
         # Vars
         $output = array(
-            "installation_status" => ""
+            "installation_status" => "OK"
         );
 
         return response()->json($output);
-
-    }
-
-    public function stepOne(){
-
-        echo view("install::step-1");
 
     }
 
