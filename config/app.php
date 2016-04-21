@@ -156,6 +156,11 @@ $app = [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+        'Illuminate\Html\HtmlServiceProvider',
+
+        # Hooks
+        App\Providers\HookServiceProvider::class
+
     ],
 
     /*
@@ -171,6 +176,8 @@ $app = [
 
     'aliases' => [
 
+        'Form'=> 'Illuminate\Html\FormFacade', 
+        'Html'=> 'Illuminate\Html\HtmlFacade',
         'App' => Illuminate\Support\Facades\App::class,
         'Artisan' => Illuminate\Support\Facades\Artisan::class,
         'Auth' => Illuminate\Support\Facades\Auth::class,
