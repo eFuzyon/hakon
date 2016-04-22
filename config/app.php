@@ -123,6 +123,8 @@ $app = [
 
     'providers' => [
 
+        'Collective\Html\HtmlServiceProvider',
+
         /*
          * Laravel Framework Service Providers...
          */
@@ -156,8 +158,6 @@ $app = [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
-        'Illuminate\Html\HtmlServiceProvider',
-
         # Hooks
         App\Providers\HookServiceProvider::class
 
@@ -176,8 +176,8 @@ $app = [
 
     'aliases' => [
 
-        'Form'=> 'Illuminate\Html\FormFacade', 
-        'Html'=> 'Illuminate\Html\HtmlFacade',
+        'Form' => 'Collective\Html\FormFacade',
+        'Html' => 'Collective\Html\HtmlFacade',
         'App' => Illuminate\Support\Facades\App::class,
         'Artisan' => Illuminate\Support\Facades\Artisan::class,
         'Auth' => Illuminate\Support\Facades\Auth::class,
