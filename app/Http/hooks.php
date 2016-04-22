@@ -3,7 +3,7 @@
 	use App\Events;
 	use App\Events\EventCoreTemplateMenuBefore;
 	use App\Events\EventCoreTemplateMenuAfter;
-	use Illuminate\Html\HtmlBuilder as Html;
+	use Collective\Html\HtmlBuilder as Html;
 
 	Html::macro("Hook", function($name = null)
 	{
