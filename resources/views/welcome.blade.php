@@ -56,10 +56,8 @@
     <body>
         <div class="container">
             <div class="content">
-                {{ Html::Hook("Core::Template::Menu::Before") }}
                 <div class="title"><a href="https://github.com/efuzyon/hakon">Hakon</a></div>
                 <div class="subtitle">Powered by <a href="https://github.com/efuzyon" target="_blank">eFuzyon Technology</a></div>
-                {{ Html::Hook("Core::Template::Menu::After") }}
             </div>
         </div>
     </body>
