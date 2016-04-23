@@ -3,6 +3,14 @@
 ![License](https://img.shields.io/badge/Build-None-red.svg)
 ![Build Status](https://img.shields.io/badge/License-MIT-blue.svg)
 
+## Install
+
+To see it working, just run:
+
+```html
+php hakon start
+```
+
 ## Hooks
 
 Here's how you call a Hook from the template:
