@@ -7,8 +7,7 @@ plugins:
             pluginInstall: "Plugin\\Hakon\\Install\\Service\\InstallServiceProvider"
 
 templates:
-    loaded:
-        - "default"
+    loaded: "default"
 
 installation:
     status: ~
