@@ -6,5 +6,9 @@ plugins:
         loaded:
             pluginInstall: "Plugin\\Hakon\\Install\\Service\\InstallServiceProvider"
 
+templates:
+    loaded:
+        - "default"
+
 installation:
-    status: ~
+    status: "OK"
