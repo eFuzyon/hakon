@@ -10,6 +10,6 @@ use App\Http\Controllers\Controller;
 class Page extends Controller
 {
     public function Selector(){
-    	return view('welcome');
+    	return view('core.welcome');
     }
 }
