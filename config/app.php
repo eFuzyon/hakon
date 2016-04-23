@@ -213,13 +213,13 @@ $app = [
 
 ];
 
-# Load plugins
-global $plugins;
+# Load $application
+global $application;
 
 # Push providers to app
-if (isset($plugins["providers"])) :
-    if (isset($plugins["providers"]["loaded"])) :
-        foreach ($plugins["providers"]["loaded"] as $loaded) :
+if (isset($application["plugins"]["providers"])) :
+    if (isset($application["plugins"]["providers"]["loaded"])) :
+        foreach ($application["plugins"]["providers"]["loaded"] as $loaded) :
             $loaded = html_entity_decode($loaded);
             array_unshift($app["providers"], $loaded);
         endforeach;
@@ -227,10 +227,10 @@ if (isset($plugins["providers"])) :
 endif;
 
 # Push aliases to app
-if (isset($plugins["aliases"])) :
-    if (isset($plugins["aliases"]["loaded"])) :
+if (isset($application["plugins"]["aliases"])) :
+    if (isset($application["plugins"]["aliases"]["loaded"])) :
         $loader = [];
-        foreach ($plugins["aliases"]["loaded"] as $alias => $loaded) :
+        foreach ($application["plugins"]["aliases"]["loaded"] as $alias => $loaded) :
             $loaded = html_entity_decode($loaded);
             $loader[$alias] = $loaded;
             $app["aliases"] = array_merge($loader, $app["aliases"]);
