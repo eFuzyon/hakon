@@ -15,13 +15,8 @@ class InstallServiceProvider extends ServiceProvider {
 		# Views
 		$this->loadViewsFrom(__DIR__.'/../View', 'install');
 
-		# Events
-		$events->listen("App\Events\EventCoreTemplateMenuBefore", function(){
-            
-        });
-        $events->listen("App\Events\EventCoreTemplateMenuAfter", function(){
-            
-        });
+		# Call Events
+		$this->events($events);
 
 	}
 
@@ -32,6 +27,17 @@ class InstallServiceProvider extends ServiceProvider {
 
 		# Code
 		$this->app->make('Plugin\Hakon\Install\Controller\InstallController');
+
+	}
+
+	public function events($hooks = null){
+
+		if ($hooks) :
+
+			# Include
+			include __DIR__.'/../hooks.php';
+
+		endif;
 
 	}
 
