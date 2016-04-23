@@ -30,18 +30,12 @@ class InstallServiceProvider extends ServiceProvider {
 
 	}
 
-	public function events($events = null){
+	public function events($hooks = null){
 
-		if ($events) :
+		if ($hooks) :
 
-			# Events
-			$events->listen("App\Events\EventCoreTemplateMenuBefore", function(){
-				echo view('install::common.menu.before');
-	        });
-
-	        $events->listen("App\Events\EventCoreTemplateMenuAfter", function(){
-	            echo view('install::common.menu.after');
-	        });
+			# Include
+			include __DIR__.'/../hooks.php';
 
 		endif;
 
