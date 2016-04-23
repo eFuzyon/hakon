@@ -48,19 +48,19 @@ $app->singleton(
 */
 
 # Vars
-$plugins_file = __DIR__."/../plugins/plugins.yml";
+$application_file = __DIR__."/../application.yml";
 
 # Load custom plugins as service providers
-if (file_exists($plugins_file)) :
+if (file_exists($application_file)) :
 
 	# Vars
-	global $plugins;
+	global $application;
 
 	# Load parser
     $yaml = new \Symfony\Component\Yaml\Parser();
 
-    # Parse plugins
-    $plugins = $yaml->parse(file_get_contents($plugins_file));
+    # Parse application
+    $application = $yaml->parse(file_get_contents($application_file));
 
 endif;
 

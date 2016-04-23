@@ -1,5 +1,1 @@
-.composer
-.lock
 .vagrant
-.env
-/vendor
