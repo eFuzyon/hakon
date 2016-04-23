@@ -30,13 +30,3 @@ Route::group(['as' => 'hakon::', 'middleware' => 'authHakonAdmin'], function () 
         ->where('page', '(.*)');
 
 });
-
-Route::group(['as' => 'hakon::', 'middleware' => 'authHeimdall'], function () {
-
-    Route::get('/heimdall', 'Heimdall\Home@indexAction')
-        ->name('heimdall');
-
-    Route::get('/heimdall/{page}', 'Heimdall\Page@Selector')
-        ->where('page', '(.*)');
-
-});
