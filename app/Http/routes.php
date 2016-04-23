@@ -23,10 +23,10 @@ Route::group(['as' => 'site::', 'middleware' => 'web'], function () {
 
 Route::group(['as' => 'hakon::', 'middleware' => 'authHakonAdmin'], function () {
 
-    Route::get('/hakon-admin', 'Admin\Home@indexAction')
+    Route::get('/hakon', 'Admin\Home@indexAction')
         ->name("admin");
 
-    Route::get('/hakon-admin/{page}', 'Admin\Page@Selector')
+    Route::get('/hakon/{page}', 'Admin\Page@Selector')
         ->where('page', '(.*)');
 
 });
