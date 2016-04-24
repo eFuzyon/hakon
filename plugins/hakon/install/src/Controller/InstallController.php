@@ -24,11 +24,11 @@ class InstallController extends Controller
         $status = "";
 
         # Get installation status from application
-        if (isset($application["installation"])) :
+        if (isset($application->installation)) :
 
-            if (array_key_exists("status", $application["installation"])) :
+            if (array_key_exists("status", $application->installation)) :
 
-                $status = ($application["installation"]["status"] == "OK") ? "OK" : "" ;
+                $status = ($application->installation->status == "OK") ? "OK" : "" ;
 
             endif;
 

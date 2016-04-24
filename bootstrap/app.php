@@ -60,7 +60,10 @@ if (file_exists($application_file)) :
     $yaml = new \Symfony\Component\Yaml\Parser();
 
     # Parse application
-    $application = $yaml->parse(file_get_contents($application_file));
+    $_app = $yaml->parse(file_get_contents($application_file));
+
+    # _app array to application object
+    $application = json_decode(json_encode($_app), FALSE);
 
 endif;
 
