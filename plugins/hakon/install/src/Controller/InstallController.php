@@ -17,11 +17,29 @@ class InstallController extends Controller
     public function status()
     {
 
+        # Globals
+        global $application;
+
         # Vars
+        $status = "";
+
+        # Get installation status from application
+        if (isset($application->installation)) :
+
+            if (array_key_exists("status", $application->installation)) :
+
+                $status = ($application->installation->status == "OK") ? "OK" : "" ;
+
+            endif;
+
+        endif;
+
+        # Push info to output
         $output = array(
-            "installation_status" => "OK"
+            "installation_status" => $status
         );
 
+        # Output
         return response()->json($output);
 
     }
