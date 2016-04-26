@@ -16,6 +16,13 @@ php hakon start
 Here's how you call a Hook from the template:
 
 ```html
+{{ Html::Hook("Name::Of::The:Hook") }}
+```
+
+Example:
+
+
+```html
 {{ Html::Hook("Core::Template::Menu::Before") }}
 ```
 
