@@ -1,55 +1,29 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Hakon</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta name="author" content="">
 
-        <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="{{ url('core/hakon/images/favicon_1.ico') }}">
 
-        <style>
-            html, body {
-                height: 100%;
-            }
+        <title>{{ $application->project->name }} - Admin - Login</title>
 
-            a {
-                text-decoration: none;
-            }
+        {!! Html::Style('core/hakon/css/bootstrap.min.css') !!}
+        {!! Html::Style('core/hakon/css/core.css') !!}
+        {!! Html::Style('core/hakon/css/components.css') !!}
+        {!! Html::Style('core/hakon/css/icons.css') !!}
+        {!! Html::Style('core/hakon/css/pages.css') !!}
+        {!! Html::Style('core/hakon/css/responsive.css') !!}
 
-            body {
-                margin: 0;
-                padding: 0;
-                width: 100%;
-                display: table;
-                font-weight: 100;
-                font-family: 'Lato';
-            }
+        <!-- HTML5 Shiv and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
 
-            .container {
-                text-align: center;
-                display: table-cell;
-                vertical-align: middle;
-            }
-
-            .content {
-                text-align: center;
-                display: inline-block;
-            }
-
-            .title, .title a {
-                color: gray;
-                font-size: 96px;
-            }
-
-            .title a:hover {
-                color: black;
-            }
-
-            .subtitle, .subtitle a {
-                color: gray;
-                font-weight: bold;
-            }
-
-            .subtitle a:hover {
-                color: black;
-            }
-        </style>
+        {!! Html::Script('core/hakon/js/modernizr.min.js') !!}
+        
     </head>
