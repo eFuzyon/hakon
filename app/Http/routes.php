@@ -11,22 +11,32 @@
 |
 */
 
+# Fixed Routes
 Route::group(['as' => 'site::', 'middleware' => 'web'], function () {
 
     Route::get('/', 'Site\Home@Index')
         ->name('web');
 
-    Route::get('/{page}', 'Site\Page@Selector')
+});
+
+Route::group(['as' => 'hakon::', 'middleware' => 'web'], function () {
+
+    Route::get('/hakon', 'Admin\Home@Index')
+        ->name("admin");
+
+});
+
+# Dynamic Routes
+Route::group(['as' => 'hakon::', 'middleware' => 'web'], function () {
+
+    Route::get('/hakon/{page}', 'Admin\Page@Selector')
         ->where('page', '(.*)');
 
 });
 
-Route::group(['as' => 'hakon::', 'middleware' => 'authHakonAdmin'], function () {
+Route::group(['as' => 'site::', 'middleware' => 'web'], function () {
 
-    Route::get('/hakon', 'Admin\Home@indexAction')
-        ->name("admin");
-
-    Route::get('/hakon/{page}', 'Admin\Page@Selector')
+    Route::get('/{page}', 'Site\Page@Selector')
         ->where('page', '(.*)');
 
 });

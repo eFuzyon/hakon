@@ -10,6 +10,6 @@ use App\Http\Controllers\Controller;
 class Home extends Controller
 {
     public function Index(){
-    	return view('core.welcome');
+    	return view('core.hakon-admin.pages.index');
     }
 }
