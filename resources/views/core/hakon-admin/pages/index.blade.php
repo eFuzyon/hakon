@@ -12,7 +12,7 @@
 
 
         <div class="panel-body">
-        <form class="form-horizontal m-t-20" action="index.html">
+        <form class="form-horizontal m-t-20" action="{{ URL::Route('hakon::admin') }}" method="POST">
             
             <div class="form-group ">
                 <div class="col-xs-12">
@@ -46,7 +46,7 @@
 
             <div class="form-group m-t-30 m-b-0">
                 <div class="col-sm-12">
-                    <a href="page-recoverpw.html" class="text-dark"><i class="fa fa-lock m-r-5"></i> Forgot your password?</a>
+                    <a href="{{ URL::route('hakon::passwordRecovery') }}" class="text-dark"><i class="fa fa-lock m-r-5"></i> Forgot your password?</a>
                 </div>
             </div>
         </form> 
