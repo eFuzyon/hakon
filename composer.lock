@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "fb82b9bc1930e13b6fc07829d6c814d3",
-    "content-hash": "970d94cc54e31427e6344127a4e136ab",
+    "hash": "68d3d5275de061aaf2903ddcfec14ac3",
+    "content-hash": "618967e832d6fb1549cdc93bda3a38df",
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -163,16 +163,16 @@
         },
         {
             "name": "efuzyon/tools",
-            "version": "v1.0.3",
+            "version": "v1.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/eFuzyon/tools.git",
-                "reference": "7e47cd7cccf581e5a1875148ae4bc656616f8f74"
+                "reference": "ac6aad19693b66f6f219d968483f28c252eba47e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/eFuzyon/tools/zipball/7e47cd7cccf581e5a1875148ae4bc656616f8f74",
-                "reference": "7e47cd7cccf581e5a1875148ae4bc656616f8f74",
+                "url": "https://api.github.com/repos/eFuzyon/tools/zipball/ac6aad19693b66f6f219d968483f28c252eba47e",
+                "reference": "ac6aad19693b66f6f219d968483f28c252eba47e",
                 "shasum": ""
             },
             "require": {
@@ -185,14 +185,9 @@
                 }
             },
             "autoload": {
-                "classmap": [
-                    "classes/string.class.php",
-                    "classes/uri.class.php",
-                    "classes/password.class.php",
-                    "classes/debug.class.php",
-                    "classes/datetime.class.php",
-                    "classes/benchmark.class.php"
-                ]
+                "psr-4": {
+                    "eFuzyon\\": "classes/"
+                }
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -205,13 +200,13 @@
                 }
             ],
             "description": "eFuzyon Project",
-            "homepage": "https://github.com/eFuzyon/eFuzyon-Project",
+            "homepage": "https://github.com/eFuzyon/tools",
             "keywords": [
                 "helper",
                 "lib",
                 "library"
             ],
-            "time": "2016-04-11 18:49:48"
+            "time": "2016-04-30 04:17:42"
         },
         {
             "name": "jakub-onderka/php-console-color",
