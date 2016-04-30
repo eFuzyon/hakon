@@ -6,30 +6,34 @@
     <div class="clearfix"></div>
     <div class="wrapper-page">
     	<div class=" card-box">
+            @if(isset($messages->error))
+                <div class="alert alert-danger">
+                    {!! $messages->error !!}
+                </div>
+            @endif
         <div class="panel-heading"> 
             <h3 class="text-center"> Sign In to <strong class="text-custom">{{ $application->project->name }}</strong></h3>
         </div> 
-
 
         <div class="panel-body">
         <form class="form-horizontal m-t-20" action="{{ URL::Route('hakon::admin') }}" method="POST">
             
             <div class="form-group ">
                 <div class="col-xs-12">
-                    <input class="form-control" type="text" required="" placeholder="Username">
+                    <input name="username" class="form-control" type="text" required="" placeholder="Username">
                 </div>
             </div>
 
             <div class="form-group">
                 <div class="col-xs-12">
-                    <input class="form-control" type="password" required="" placeholder="Password">
+                    <input name="password" class="form-control" type="password" required="" placeholder="Password">
                 </div>
             </div>
 
             <div class="form-group ">
                 <div class="col-xs-12">
                     <div class="checkbox checkbox-primary">
-                        <input id="checkbox-signup" type="checkbox">
+                        <input id="checkbox-signup"  name="remember" type="checkbox" value="on">
                         <label for="checkbox-signup">
                             Remember me
                         </label>

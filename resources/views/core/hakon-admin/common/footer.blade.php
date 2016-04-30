@@ -15,7 +15,6 @@
         {!! Html::Script('core/hakon/js/jquery.nicescroll.js') !!}
         {!! Html::Script('core/hakon/js/jquery.scrollTo.min.js') !!}
 
-
         {!! Html::Script('core/hakon/js/jquery.core.js') !!}
         {!! Html::Script('core/hakon/js/jquery.app.js') !!}
 	
