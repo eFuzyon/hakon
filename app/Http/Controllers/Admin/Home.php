@@ -14,7 +14,7 @@ class Home extends Controller
     	# Globals
     	global $application;
 
-    	# Output
+    	# Output 
     	return view('core.hakon-admin.pages.index', 
     	[
     		"application" => $application
