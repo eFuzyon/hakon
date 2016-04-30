@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use eFuzyon\Tools;
 
 class CreateAdminTable extends Migration
 {
@@ -12,6 +13,8 @@ class CreateAdminTable extends Migration
      */
     public function up()
     {
+
+        # Create table
         Schema::Create('hakon_admin', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
@@ -20,6 +23,20 @@ class CreateAdminTable extends Migration
             $table->string('password');
             $table->timestamps();
         });
+
+        # Generate password
+        $password = eFuzyon\Password::Generate('hakoncms', [
+            "public-key" => "hakonCMS"
+        ]);
+
+        # Seed Table
+        DB::table('hakon_admin')->insert([
+            'id' => 1,
+            'name' => 'Hakon',
+            'email' => 'hakon@efuzyon.com',
+            'username' => 'hakoncms',
+            'password' => $password
+        ]);
     }
 
     /**
@@ -29,6 +46,6 @@ class CreateAdminTable extends Migration
      */
     public function down()
     {
-        Schema::drop('hakon_admin');
+        Schema::dropIfExists('hakon_admin');
     }
 }
