@@ -1,3 +1,6 @@
+project:
+    name: "Hakon CMS"
+    
 plugins:
     providers:
         loaded:
@@ -10,4 +13,4 @@ templates:
     loaded: "default"
 
 installation:
-    status: ~
+    status: "OK"
