@@ -3,7 +3,7 @@ eFuzyon v1.0
 
 1. OVERVIEW
 
-The "eFuzyon Project" was created by "eFuzyon Technology" to help PHP developers
+The "eFuzyon Tools" was created by "eFuzyon Technology" to help PHP developers
 with boring tasks like cleaning up strings, generating URI strings, and others.
 
 Our main goal is to increase your productivity while maintaining or creating a 
@@ -13,8 +13,8 @@ As this project evolves, we'll try to increase the range of classes and methods
 to help a number even bigger of developers.
 
 Let us know if you have any classes or methods to be included on the project.
-You can track our development at https://github.com/eFuzyon/eFuzyon/
-More information at https://efuzyon.github.io/eFuzyon-Project/
+You can track our development at https://github.com/eFuzyon/tools/
+More information at https://efuzyon.github.io/tools/
 
 2. REQUIREMENTS
 
@@ -36,11 +36,11 @@ number of bugs and be a little bit rough around the edges.
 
 Let us know if you have any classes or methods to be included on the project.
 You can track our development at https://github.com/eFuzyon/eFuzyon
-More information at https://efuzyon.github.io/eFuzyon-Project/
+More information at https://efuzyon.github.io/tools/
 
 5. LICENSES
 
-The "eFuzyon Project" is distributed under the MIT License v2.0.
+The "eFuzyon Tools" is distributed under the MIT License v2.0.
 Find out more at http://en.wikipedia.org/wiki/MIT_License
 
 PHP and related libraries are distributed under the PHP License v3.01.
