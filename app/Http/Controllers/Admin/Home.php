@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers\Admin;
 
-use Illuminate\Http\Request;
-
+use Session;
 use eFuzyon\String as String;
 use eFuzyon\Password as Password;
 use App\Models\Admin;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 
 class Home extends Controller
 {
@@ -46,10 +46,20 @@ class Home extends Controller
 
         endif;
 
+        # Clening up session
+        Session::forget('adminObj');
+
     	# Output
         if (!empty($admin)) :
 
-            // ...
+            # Renegerate session
+            session()->regenerate();
+
+            # Push admin object to session
+            Session::put('adminObj', $admin);
+
+            # Redirect to dashboard
+            return redirect()->route('hakon::dashboard');
 
         else:
 
