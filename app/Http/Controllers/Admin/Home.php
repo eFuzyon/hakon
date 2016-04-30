@@ -21,4 +21,17 @@ class Home extends Controller
     	]);
 
     }
+
+    public function SignIn(){
+
+    	# Globals
+    	global $application;
+
+    	# Output
+    	return view('core.hakon-admin.pages.index', 
+    	[
+    		"application" => $application
+    	]);
+
+    }
 }
