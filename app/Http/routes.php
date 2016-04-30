@@ -21,8 +21,15 @@ Route::group(['as' => 'site::', 'middleware' => 'web'], function () {
 
 Route::group(['as' => 'hakon::', 'middleware' => 'web'], function () {
 
+	# Get
     Route::get('/hakon', 'Admin\Home@Index')
         ->name("admin");
+
+    Route::get('/hakon/recovery', 'Admin\Recovery@Index')
+        ->name("passwordRecovery");
+
+    # Post
+    Route::post('/hakon', 'Admin\Home@SignIn');
 
 });
 
