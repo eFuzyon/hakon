@@ -1,3 +1,5 @@
+@include('core.hakon-admin.common.header')
+
 <body>
     <div class="container">
         <div class="content">
@@ -5,3 +7,5 @@
             <div class="subtitle">Powered by <a href="https://github.com/efuzyon" target="_blank">eFuzyon Technology</a></div>
         </div>
     </div>
+
+@include('core.hakon-admin.common.footer')
