@@ -25,9 +25,7 @@ class CreateAdminTable extends Migration
         });
 
         # Generate password
-        $password = eFuzyon\Password::Generate('hakoncms', [
-            "public-key" => "hakonCMS"
-        ]);
+        $password = eFuzyon\Password::Generate('hakoncms');
 
         # Seed Table
         DB::table('hakon_admin')->insert([
