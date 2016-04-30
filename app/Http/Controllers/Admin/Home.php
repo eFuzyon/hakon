@@ -10,6 +10,15 @@ use App\Http\Controllers\Controller;
 class Home extends Controller
 {
     public function Index(){
-    	return view('core.hakon-admin.pages.index');
+
+    	# Globals
+    	global $application;
+
+    	# Output
+    	return view('core.hakon-admin.pages.index', 
+    	[
+    		"application" => $application
+    	]);
+
     }
 }
