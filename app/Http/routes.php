@@ -28,6 +28,9 @@ Route::group(['as' => 'hakon::', 'middleware' => 'web'], function () {
     Route::get('/hakon/recovery', 'Admin\Recovery@Index')
         ->name("passwordRecovery");
 
+    Route::get('/hakon/dashboard', 'Admin\Dashboard@Index')
+        ->name("dashboard");
+
     # Post
     Route::post('/hakon', 'Admin\Home@SignIn');
 
