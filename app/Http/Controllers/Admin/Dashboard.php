@@ -16,7 +16,7 @@ class Dashboard extends Controller
     	global $application;
 
     	# Output 
-    	return view('core.welcome', 
+    	return view('core.hakon-admin.pages.dashboard', 
     	[
     		"application" => $application
     	]);
