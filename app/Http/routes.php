@@ -11,28 +11,36 @@
 |
 */
 
-# Fixed Routes
+# Fixed Routes (site::)
 Route::group(['as' => 'site::', 'middleware' => 'web'], function () {
 
+    # Get
     Route::get('/', 'Site\Home@Index')
         ->name('web');
 
 });
 
+# Fixed Routes (hakon::) - Before SignIn
 Route::group(['as' => 'hakon::', 'middleware' => 'web'], function () {
 
-	# Get
+    # Get
     Route::get('/hakon', 'Admin\Home@Index')
         ->name("admin");
 
     Route::get('/hakon/recovery', 'Admin\Recovery@Index')
         ->name("passwordRecovery");
 
-    Route::get('/hakon/dashboard', 'Admin\Dashboard@Index')
-        ->name("dashboard");
-
     # Post
     Route::post('/hakon', 'Admin\Home@SignIn');
+
+});
+
+# Fixed Routes (hakon::) - After SignIn
+Route::group(['as' => 'hakon::', 'middleware' => 'hakonAuth'], function () {
+
+    # Get
+    Route::get('/hakon/dashboard', 'Admin\Dashboard@Index')
+        ->name("dashboard");    
 
 });
 
