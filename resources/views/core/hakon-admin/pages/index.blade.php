@@ -1,4 +1,4 @@
-@include('core.hakon-admin.common.header')
+@include('core.hakon-admin.common.signin-header')
 
 <body>
 
@@ -60,4 +60,4 @@
         
     </div>
 
-@include('core.hakon-admin.common.footer');
+@include('core.hakon-admin.common.signin-footer');
