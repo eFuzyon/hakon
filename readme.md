@@ -1,31 +1,7 @@
-# eFuzyon: Hakon CMS
+# Hakon CMS
 
-![License](https://img.shields.io/badge/Build-None-red.svg)
-![Build Status](https://img.shields.io/badge/License-MIT-blue.svg)
+## This project has been moved
 
-## Install
+This project has been moved to [HakonCMS/HakonCMS](https://github.com/HakonCMS/HakonCMS). If you still want to see the old files, you can check the "deprecated" branch.
 
-To see it working, just run:
-
-```html
-php hakon start
-```
-
-## Hooks
-
-Here's how you call a Hook from the template:
-
-```html
-{{ Html::Hook("Name::Of::The:Hook") }}
-```
-
-Example:
-
-
-```html
-{{ Html::Hook("Core::Template::Menu::Before") }}
-```
-
-## License
-
-The "eFuzyon: Hakon CMS" is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
+#### Thanks
