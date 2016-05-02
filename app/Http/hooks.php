@@ -20,12 +20,9 @@
 
 	});
 
-	Html::macro("Core::Template::Menu::Before", function($param = null)
+	Html::macro("Core::Template::Menu", function($param = null)
 	{
 		Event::Fire(new EventCoreTemplateMenuBefore($param));
-	});
-
-	Html::macro("Core::Template::Menu::After", function($param = null)
-	{
-	    Event::Fire(new EventCoreTemplateMenuAfter($param));
+		Event::Fire(new EventCoreTemplateMenu($param));
+		Event::Fire(new EventCoreTemplateMenuAfter($param));
 	});
