@@ -48,9 +48,8 @@
 
                     	<li class="text-muted menu-title">Navigation</li>
 
-                        <li>
-                            <a href="{{ URL::Route('hakon::dashboard') }}" class="waves-effect active"><i class="ti-home"></i> <span> Dashboard </span> </a>
-                        </li>
+                        {{ Html::Hook("Core::Admin::Template::Menu") }}
+
                     </ul>
                     <div class="clearfix"></div>
                 </div>
