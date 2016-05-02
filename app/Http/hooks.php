@@ -20,9 +20,16 @@
 
 	});
 
-	Html::macro("Core::Template::Menu", function($param = null)
+	Html::macro("Core::Admin::Template::Menu", function($param = null)
 	{
 		Event::Fire(new EventCoreTemplateMenuBefore($param));
 		Event::Fire(new EventCoreTemplateMenu($param));
 		Event::Fire(new EventCoreTemplateMenuAfter($param));
+	});
+
+	Html::macro("Core::Admin::Template::Menu::Item", function($param = null)
+	{
+		Event::Fire(new EventCoreTemplateMenuItemBefore($param));
+		Event::Fire(new EventCoreTemplateMenuItem($param));
+		Event::Fire(new EventCoreTemplateMenuItemAfter($param));
 	});
